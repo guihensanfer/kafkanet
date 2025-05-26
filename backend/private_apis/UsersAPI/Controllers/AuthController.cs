@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UsersAPI.Controllers
 {
-
+    [ApiController]
+    [Route("[controller]")]
     public class AuthController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -19,12 +20,12 @@ namespace UsersAPI.Controllers
         {
             public string UserName { get; set; } = default!;
             public string Email { get; set; } = default!;
-            public string Password { get; set; } = default!;    
+            public string Password { get; set; } = default!;
         }
 
 
         /// <summary>
-        /// Create user using kafka
+        /// Create user using kafka events.
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
@@ -46,6 +47,50 @@ namespace UsersAPI.Controllers
             }
 
             return BadRequest(result.Errors);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUserAsync(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                return NotFound("Usuário não encontrado.");
+            }
+
+            var result = await _userManager.DeleteAsync(user);
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("Users.Deleted");
+                return Ok("User was deleted successfully.");
+            }
+
+            return BadRequest(result.Errors);
+        }
+
+        /// <summary>
+        /// Get user by id immediatelly.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserByIdSync(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                return NotFound("Usuário não encontrado.");
+            }
+
+            return Ok(new
+            {
+                user.Id,
+                user.UserName,
+                user.Email
+            });
         }
     }
 }
