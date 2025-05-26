@@ -482,24 +482,26 @@
     ]
   },
   "packageFolders": {
-    "/home/guilhermeferreira/.nuget/packages/": {}
+    "C:\\Users\\guihe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/run/media/guilhermeferreira/Projects/kafkanet/backend/public_apis/GatewayAPI/GatewayAPI.csproj",
+      "projectUniqueName": "C:\\Users\\guihe\\Downloads\\Nova pasta (5)\\kafkanet\\backend\\public_apis\\GatewayAPI\\GatewayAPI.csproj",
       "projectName": "GatewayAPI",
-      "projectPath": "/run/media/guilhermeferreira/Projects/kafkanet/backend/public_apis/GatewayAPI/GatewayAPI.csproj",
-      "packagesPath": "/home/guilhermeferreira/.nuget/packages/",
-      "outputPath": "/run/media/guilhermeferreira/Projects/kafkanet/backend/public_apis/GatewayAPI/obj/",
+      "projectPath": "C:\\Users\\guihe\\Downloads\\Nova pasta (5)\\kafkanet\\backend\\public_apis\\GatewayAPI\\GatewayAPI.csproj",
+      "packagesPath": "C:\\Users\\guihe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guihe\\Downloads\\Nova pasta (5)\\kafkanet\\backend\\public_apis\\GatewayAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/guilhermeferreira/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\guihe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -512,6 +514,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -546,7 +553,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
