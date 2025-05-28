@@ -280,3 +280,11 @@ C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\o
 C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\obj\Debug\net8.0\UsersAPI.pdb
 C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\obj\Debug\net8.0\UsersAPI.genruntimeconfig.cache
 C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\obj\Debug\net8.0\ref\UsersAPI.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

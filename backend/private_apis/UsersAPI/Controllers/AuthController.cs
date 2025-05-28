@@ -1,96 +1,41 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UsersAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly ILogger<AuthController> _logger;
+        private readonly ILogger<UserController> _logger;
+        private readonly JwtService _jwtService;
 
-        public AuthController(UserManager<IdentityUser> userManager, ILogger<AuthController> logger)
+        public AuthController(UserManager<IdentityUser> userManager, ILogger<UserController> logger, JwtService jwtService)
         {
             _userManager = userManager;
             _logger = logger;
+            _jwtService = jwtService;
         }
 
-        public class CreateUserDto
-        {
-            public string UserName { get; set; } = default!;
-            public string Email { get; set; } = default!;
-            public string Password { get; set; } = default!;
+        public class AuthModelView
+        {                        
+            public required string Email { get; set; }            
+            public required string Password { get; set; } 
         }
 
-
-        /// <summary>
-        /// Create user using kafka events.
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        [HttpPost("CreateUserAsync")]
-        public async Task<IActionResult> CreateUserAsync([FromBody] CreateUserDto dto)
+        [HttpPost("LoginSync")]
+        public async Task<IActionResult> LoginSync([FromBody] AuthModelView dto)
         {
-            var user = new IdentityUser()
+             var user = await _userManager.FindByEmailAsync(dto.Email);
+            if (user != null && await _userManager.CheckPasswordAsync(user, dto.Password))
             {
-                UserName = dto.UserName,
-                Email = dto.Email
-            };
-
-            var result = await _userManager.CreateAsync(user, dto.Password);
-
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("Users.Created");
-                return Ok("User was created successfully.");
+                var token = _jwtService.GenerateToken(user);
+                return Ok(new { token });
             }
 
-            return BadRequest(result.Errors);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUserAsync(string id)
-        {
-            var user = await _userManager.FindByIdAsync(id);
-
-            if (user == null)
-            {
-                return NotFound("Usuário não encontrado.");
-            }
-
-            var result = await _userManager.DeleteAsync(user);
-
-            if (result.Succeeded)
-            {
-                _logger.LogInformation("Users.Deleted");
-                return Ok("User was deleted successfully.");
-            }
-
-            return BadRequest(result.Errors);
-        }
-
-        /// <summary>
-        /// Get user by id immediatelly.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserByIdSync(string id)
-        {
-            var user = await _userManager.FindByIdAsync(id);
-
-            if (user == null)
-            {
-                return NotFound("Usuário não encontrado.");
-            }
-
-            return Ok(new
-            {
-                user.Id,
-                user.UserName,
-                user.Email
-            });
-        }
+            return Unauthorized();
+        }        
     }
 }
