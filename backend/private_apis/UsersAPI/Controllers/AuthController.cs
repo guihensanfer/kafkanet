@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace UsersAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [AllowAnonymous]
     public class AuthController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -20,15 +22,15 @@ namespace UsersAPI.Controllers
         }
 
         public class AuthModelView
-        {                        
-            public required string Email { get; set; }            
-            public required string Password { get; set; } 
+        {
+            public required string Email { get; set; }
+            public required string Password { get; set; }
         }
 
         [HttpPost("LoginSync")]
         public async Task<IActionResult> LoginSync([FromBody] AuthModelView dto)
         {
-             var user = await _userManager.FindByEmailAsync(dto.Email);
+            var user = await _userManager.FindByEmailAsync(dto.Email);
             if (user != null && await _userManager.CheckPasswordAsync(user, dto.Password))
             {
                 var token = _jwtService.GenerateToken(user);
@@ -36,6 +38,6 @@ namespace UsersAPI.Controllers
             }
 
             return Unauthorized();
-        }        
+        }
     }
 }
