@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace UsersAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    [AllowAnonymous]
+    [Route("api/[controller]")]    
     public class AuthController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
