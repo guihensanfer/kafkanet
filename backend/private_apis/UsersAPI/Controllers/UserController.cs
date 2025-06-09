@@ -6,7 +6,6 @@ namespace UsersAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]    
-    [Authorize]    
     public class UserController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -32,6 +31,7 @@ namespace UsersAPI.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost("CreateUserAsync")]
+        [Authorize]
         public async Task<IActionResult> CreateUserAsync([FromBody] CreateUserViewModel dto)
         {
             var user = new IdentityUser()
@@ -52,6 +52,7 @@ namespace UsersAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteUserAsync(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -78,6 +79,7 @@ namespace UsersAPI.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetUserByIdSync(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
