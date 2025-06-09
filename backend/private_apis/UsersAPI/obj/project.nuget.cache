@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8YBOuRz2b1Q=",
+  "dgSpecHash": "BurRhIQEMz4=",
   "success": true,
   "projectFilePath": "C:\\Users\\guihe\\Downloads\\Nova pasta (5)\\kafkanet\\backend\\private_apis\\UsersAPI\\UsersAPI.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,10 @@
     "C:\\Users\\guihe\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\guihe\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\guihe\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\guihe\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\guihe\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "C:\\Users\\guihe\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\8.0.3\\swashbuckle.aspnetcore.filters.8.0.3.nupkg.sha512",
+    "C:\\Users\\guihe\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\8.0.3\\swashbuckle.aspnetcore.filters.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\guihe\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\guihe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
     "C:\\Users\\guihe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",

@@ -288,3 +288,6 @@ C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\b
 C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Scrutor.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\guihe\Downloads\Nova pasta (5)\kafkanet\backend\private_apis\UsersAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

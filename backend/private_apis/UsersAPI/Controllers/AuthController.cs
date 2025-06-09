@@ -28,6 +28,7 @@ namespace UsersAPI.Controllers
         }
 
         [HttpPost("LoginSync")]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginSync([FromBody] AuthModelView dto)
         {
             var user = await _userManager.FindByEmailAsync(dto.Email);
